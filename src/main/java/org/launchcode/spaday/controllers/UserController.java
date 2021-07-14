@@ -19,6 +19,7 @@ public class UserController {
 
     public String processAddUserForm(Model model, @ModelAttribute User user, String verify) {
         // add form submission handling code here
+        model.addAttribute("verify", verify);
         if (user.getPassword().equals(verify)) {
             return "user/index";
         }
